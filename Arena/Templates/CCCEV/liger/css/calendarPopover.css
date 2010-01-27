@@ -1,0 +1,143 @@
+﻿.email-invite-holder
+{
+	width:890px;
+	margin:0 auto;
+	position:relative;
+}
+
+.email-invite
+{
+	margin:0 0 0 -115px;
+	width:660px;
+	height:394px;
+	padding:121px 0 0 231px;
+	background:url(../images/login-bg.png) no-repeat;
+}
+
+.email-invite-holder .email-box
+{
+	width:509px;
+	height:372px;
+	min-height: 372px;
+	padding:24px 0 0 151px;
+	background:url(../images/bg-email-box.png) no-repeat;
+}
+
+.email-invite-holder .email-box input.btn
+{
+	background:url(../images/btn-send.gif );
+	width: 150px;
+	height: 19px;
+	border: none;
+}
+
+.email-invite-holder .email-box a.btn
+{
+	position:absolute;
+	top:101px;
+	right:200px;
+	width:23px;
+	height:20px;
+	background:url(../images/btn-x.gif) no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+
+.email-invite-holder .email-box .form-holder
+{
+	width:346px;
+	padding:24px 0 0 2px;
+}
+
+.email-invite-holder .email-box .subscribe
+{
+	height:1%;
+	overflow:hidden;
+}
+
+.email-invite-holder .email-box input
+{
+	position:relative;
+}
+
+.email-invite-holder .email-box a
+{
+	position:relative;
+}
+
+.email-invite-holder .email-box .subscribe label
+{
+	float:left;
+	font-size:14px;
+	color:#fff;
+	line-height:14px;
+	padding:5px 0;
+	position:relative;
+}
+
+.email-invite-holder .email-box .subscribe div.text
+{
+	float:left;
+	width:340px;
+	height:28px;
+	overflow:hidden;
+	background:#fff;
+	border:3px solid #cdba00;
+}
+
+.email-invite-holder .email-box .subscribe .mar-top
+{
+	margin-top:12px;
+}
+
+.email-invite-holder .email-box .subscribe div.text input
+{
+	width:340px;
+	background:none;
+	border:0;
+	padding:2px 0;
+	font:24px/24px Arial, Helvetica, sans-serif;
+	color:#000;
+}
+
+.email-invite-holder .email-box .subscribe input.btn
+{
+	float:right;
+	margin-top:22px;
+	margin-bottom: 30px;
+}
+
+.email-invite-holder .email-box h2.img
+{
+	background:url(../images/email-title.png) no-repeat;
+	text-indent:-9999px;
+	width:351px;
+	height:31px;
+	margin:0;
+	overflow:hidden;
+}
+
+.cal-overlayBg
+{
+	display:none;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	min-width:970px;	
+	height:100%;
+	background:#000;
+	z-index:99;
+}
+
+.cal-popup-light-holder
+{
+	display:none;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	min-width:970px;
+	z-index:100;
+	padding-top: 150px;
+}
