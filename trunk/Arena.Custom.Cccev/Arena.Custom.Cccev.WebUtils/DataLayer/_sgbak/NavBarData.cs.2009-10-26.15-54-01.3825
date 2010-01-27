@@ -1,0 +1,66 @@
+/**********************************************************************
+* Description: A flattened page heirarchy.
+* Created By:   Nick Airdo @ Central Christian Church of the East Valley
+* Date Created:	11/21/2007 9:27:28
+*
+* $Workfile: NavBarData.cs $
+* $Revision: 2 $ 
+* $Header: /Arena/Arena.Custom.Cccev.WebUtils/DataLayer/NavBarData.cs   2   2008-01-11 15:28:21-07:00   nicka $
+* 
+* $Log: /Arena/Arena.Custom.Cccev.WebUtils/DataLayer/NavBarData.cs $
+*  
+*  Revision: 2   Date: 2008-01-11 22:28:21Z   User: nicka 
+*  Added permission check for the given personID 
+*  
+*  Revision: 1   Date: 2007-12-31 16:10:53Z   User: nicka 
+*  first version 
+**********************************************************************/
+using System;
+using System.Data;
+using System.Collections;
+using System.Data.SqlClient;
+using Arena.DataLib;
+
+namespace Arena.Custom.Cccev.WebUtils
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	public class NavBarData : SqlData
+	{
+		/// <summary>
+		/// Class constructor.
+		/// </summary>
+		public NavBarData()
+		{
+		}
+
+		/// <summary>
+		/// Returns a flatened page hierarchy.
+		/// </summary>
+		/// <param name="currentPageID">The root page of the hierarchy.</param>
+		/// <returns>a datatable containing page_id, parent_page_id and page_name</returns>
+		public DataTable GetNavBar_DT( int currentPageID, int personID)
+		{
+			ArrayList lst = new ArrayList();
+
+			lst.Add( new SqlParameter( "@CurrentPageID", currentPageID ) );
+			lst.Add( new SqlParameter( "@PersonID", personID ) );
+
+			try
+			{
+				return this.ExecuteDataTable( "cust_cccev_navbar_sp_get_descendants", lst );
+			}
+			catch ( SqlException ex )
+			{
+				throw ex;
+			}
+			finally
+			{
+				lst = null;
+			}
+		}
+	}
+}
+
+

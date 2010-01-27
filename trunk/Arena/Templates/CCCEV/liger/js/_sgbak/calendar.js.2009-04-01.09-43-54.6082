@@ -1,0 +1,70 @@
+﻿/**********************************************************************
+* Description:	TBD
+* Created By:   Jason Offutt @ Central Christian Church of the East Valley
+* Date Created:	TBD
+*
+* $Workfile: calendar.js $
+* $Revision: 2 $ 
+* $Header: /trunk/Arena/Templates/Cccev/liger/js/calendar.js   2   2009-03-25 10:57:34-07:00   JasonO $
+* 
+* $Log: /trunk/Arena/Templates/Cccev/liger/js/calendar.js $
+*  
+*  Revision: 2   Date: 2009-03-25 17:57:34Z   User: JasonO 
+*  
+*  Revision: 1   Date: 2009-03-24 20:13:32Z   User: JasonO 
+**********************************************************************/
+
+var overCalendar = false;
+var clickedCalendar = false;
+
+$(document).ready(function()
+{
+    initCalendar();
+});
+
+function initCalendar()
+{
+    $('div.calendar-holder').click(function(event)
+    {
+        $('#upProgress div').removeClass().addClass('calendarProgress');
+        clickedCalendar = true;
+        update(event);
+        return true;
+    });
+
+    $('div.calendar-holder').mouseenter(function()
+    {
+        overCalendar = true;
+        return false;
+    })
+
+    .mouseleave(function()
+    {
+        overCalendar = false;
+        return false;
+    });
+}
+
+function update(event)
+{
+    if (overCalendar && clickedCalendar)
+    {
+        var left = event.clientX + 15;
+        var top = event.clientY + 15;
+
+        $('#upProgress div').css({
+            top: top,
+            left: left
+        });
+
+        return false;
+    }
+}
+
+function pageUpdated()
+{
+    clickedCalendar = false;
+    $('#upProgress div').removeAttr('style');
+    $('#upProgress div').removeClass().addClass('ajaxProgress');
+    return false;
+}
