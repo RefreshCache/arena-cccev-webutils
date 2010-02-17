@@ -4,10 +4,16 @@
 * Date Created:	TBD
 *
 * $Workfile: FlickrPhotoGallery.ascx.cs $
-* $Revision: 2 $ 
-* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/FlickrPhotoGallery.ascx.cs   2   2009-04-15 13:42:07-07:00   nicka $
+* $Revision: 4 $ 
+* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/FlickrPhotoGallery.ascx.cs   4   2010-02-17 09:52:47-07:00   JasonO $
 * 
 * $Log: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/FlickrPhotoGallery.ascx.cs $
+*  
+*  Revision: 4   Date: 2010-02-17 16:52:47Z   User: JasonO 
+*  Fixing jquery include issues. 
+*  
+*  Revision: 3   Date: 2010-01-27 22:49:28Z   User: JasonO 
+*  Cleaning up. 
 *  
 *  Revision: 2   Date: 2009-04-15 20:42:07Z   User: nicka 
 *  added retrieval of media info from Flickr 
@@ -42,7 +48,7 @@ namespace ArenaWeb.UserControls.Custom.Cccev.WebUtils
         {
             if (!Page.IsPostBack)
             {
-                smpScripts.Scripts.Add(new ScriptReference(BasePage.JQUERY_INCLUDE));
+                smpScripts.Scripts.Add(new ScriptReference(string.Format("~/{0}", BasePage.JQUERY_INCLUDE)));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/jquery.galleryScroll.1.4.5.pack.js"));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/main.js"));
             }

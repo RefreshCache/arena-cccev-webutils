@@ -4,10 +4,16 @@
 * Date Created:	4/20/2009
 *
 * $Workfile: SidebarCalendar.ascx.cs $
-* $Revision: 19 $ 
-* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/SidebarCalendar.ascx.cs   19   2009-07-28 10:10:11-07:00   JasonO $
+* $Revision: 21 $ 
+* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/SidebarCalendar.ascx.cs   21   2010-02-17 09:52:47-07:00   JasonO $
 * 
 * $Log: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/SidebarCalendar.ascx.cs $
+*  
+*  Revision: 21   Date: 2010-02-17 16:52:47Z   User: JasonO 
+*  Fixing jquery include issues. 
+*  
+*  Revision: 20   Date: 2010-01-27 22:49:28Z   User: JasonO 
+*  Cleaning up. 
 *  
 *  Revision: 19   Date: 2009-07-28 17:10:11Z   User: JasonO 
 *  Refactoring code. 
@@ -76,7 +82,7 @@ namespace ArenaWeb.UserControls.Custom.Cccev.WebUtils
 
             if (!Page.IsPostBack)
             {
-                smpScripts.Scripts.Add(new ScriptReference(BasePage.JQUERY_INCLUDE));
+                smpScripts.Scripts.Add(new ScriptReference(string.Format("~/{0}", BasePage.JQUERY_INCLUDE)));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/jquery.galleryScroll.1.4.5.pack.js"));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/main.js"));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/popover.js"));

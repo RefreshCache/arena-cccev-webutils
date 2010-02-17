@@ -4,10 +4,16 @@
 * Date Created:	4/08/2009
 *
 * $Workfile: CalendarInvitePopover.ascx.cs $
-* $Revision: 10 $ 
-* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/CalendarInvitePopover.ascx.cs   10   2009-07-28 11:06:15-07:00   JasonO $
+* $Revision: 12 $ 
+* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/CalendarInvitePopover.ascx.cs   12   2010-02-17 09:52:47-07:00   JasonO $
 * 
 * $Log: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/CalendarInvitePopover.ascx.cs $
+*  
+*  Revision: 12   Date: 2010-02-17 16:52:47Z   User: JasonO 
+*  Fixing jquery include issues. 
+*  
+*  Revision: 11   Date: 2010-01-27 22:49:28Z   User: JasonO 
+*  Cleaning up. 
 *  
 *  Revision: 10   Date: 2009-07-28 18:06:15Z   User: JasonO 
 *  
@@ -72,7 +78,7 @@ namespace ArenaWeb.UserControls.Custom.Cccev.WebUtils
         {
             if (!Page.IsPostBack && CssFileSetting.Trim() != string.Empty)
             {
-                smpScripts.Scripts.Add(new ScriptReference(BasePage.JQUERY_INCLUDE));
+                smpScripts.Scripts.Add(new ScriptReference(string.Format("~/{0}", BasePage.JQUERY_INCLUDE)));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/popover.js"));
                 BasePage.AddCssLink(Page, CssFileSetting);
             }

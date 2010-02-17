@@ -4,10 +4,16 @@
 * Date Created:	3/23/2009 4:29:45 PM
 *
 * $Workfile: PodcastChannelTopics.ascx.cs $
-* $Revision: 6 $ 
-* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PodcastChannelTopics.ascx.cs   6   2009-11-16 14:31:52-07:00   JasonO $
+* $Revision: 8 $ 
+* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PodcastChannelTopics.ascx.cs   8   2010-02-17 09:52:47-07:00   JasonO $
 * 
 * $Log: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PodcastChannelTopics.ascx.cs $
+*  
+*  Revision: 8   Date: 2010-02-17 16:52:47Z   User: JasonO 
+*  Fixing jquery include issues. 
+*  
+*  Revision: 7   Date: 2010-01-27 22:49:28Z   User: JasonO 
+*  Cleaning up. 
 *  
 *  Revision: 6   Date: 2009-11-16 21:31:52Z   User: JasonO 
 *  Adding ability to sort topic items and display unpublished items. 
@@ -59,7 +65,7 @@ namespace ArenaWeb.UserControls.Custom.Cccev.WebUtils
         {
             if (!Page.IsPostBack)
             {
-                smpScripts.Scripts.Add(new ScriptReference(BasePage.JQUERY_INCLUDE));
+                smpScripts.Scripts.Add(new ScriptReference(string.Format("~/{0}", BasePage.JQUERY_INCLUDE)));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/jquery.galleryScroll.1.4.5.pack.js"));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/main.js"));
             }
