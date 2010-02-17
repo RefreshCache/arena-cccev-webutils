@@ -4,10 +4,16 @@
 * Date Created:	2/25/2009 2:39:25 PM
 *
 * $Workfile: PromotionRoller.ascx.cs $
-* $Revision: 12 $ 
-* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PromotionRoller.ascx.cs   12   2010-01-13 20:22:25-07:00   nicka $
+* $Revision: 14 $ 
+* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PromotionRoller.ascx.cs   14   2010-02-17 09:52:47-07:00   JasonO $
 * 
 * $Log: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PromotionRoller.ascx.cs $
+*  
+*  Revision: 14   Date: 2010-02-17 16:52:47Z   User: JasonO 
+*  Fixing jquery include issues. 
+*  
+*  Revision: 13   Date: 2010-01-27 22:49:28Z   User: JasonO 
+*  Cleaning up. 
 *  
 *  Revision: 12   Date: 2010-01-14 03:22:25Z   User: nicka 
 *  Added setting to control whether to randomize or not. 
@@ -106,7 +112,7 @@ namespace ArenaWeb.UserControls.Custom.Cccev.WebUtils
 		{
             if (!Page.IsPostBack)
             {
-                smpScripts.Scripts.Add(new ScriptReference(BasePage.JQUERY_INCLUDE));
+                smpScripts.Scripts.Add(new ScriptReference(string.Format("~/{0}", BasePage.JQUERY_INCLUDE)));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/jquery.galleryScroll.1.4.5.pack.js"));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/main.js"));
             }

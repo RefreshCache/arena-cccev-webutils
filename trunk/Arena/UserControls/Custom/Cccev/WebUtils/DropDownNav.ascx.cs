@@ -4,10 +4,16 @@
 * Date Created:	TBD
 *
 * $Workfile: DropDownNav.ascx.cs $
-* $Revision: 13 $ 
-* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/DropDownNav.ascx.cs   13   2009-04-20 14:34:53-07:00   JasonO $
+* $Revision: 15 $ 
+* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/DropDownNav.ascx.cs   15   2010-02-17 09:52:47-07:00   JasonO $
 * 
 * $Log: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/DropDownNav.ascx.cs $
+*  
+*  Revision: 15   Date: 2010-02-17 16:52:47Z   User: JasonO 
+*  Fixing jquery include issues. 
+*  
+*  Revision: 14   Date: 2010-01-27 22:49:28Z   User: JasonO 
+*  Cleaning up. 
 *  
 *  Revision: 13   Date: 2009-04-20 21:34:53Z   User: JasonO 
 *  
@@ -56,7 +62,7 @@ namespace ArenaWeb.UserControls.Custom.Cccev.WebUtils
         {
             if (!Page.IsPostBack)
             {
-                smpScripts.Scripts.Add(new ScriptReference(BasePage.JQUERY_INCLUDE));
+                smpScripts.Scripts.Add(new ScriptReference(string.Format("~/{0}", BasePage.JQUERY_INCLUDE)));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/drop.js"));
             }
 

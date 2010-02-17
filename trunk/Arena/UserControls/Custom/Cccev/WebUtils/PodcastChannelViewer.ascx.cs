@@ -4,10 +4,16 @@
 * Date Created:	3/18/2009 5:11:53 PM
 *
 * $Workfile: PodcastChannelViewer.ascx.cs $
-* $Revision: 4 $ 
-* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PodcastChannelViewer.ascx.cs   4   2009-04-16 11:48:36-07:00   JasonO $
+* $Revision: 6 $ 
+* $Header: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PodcastChannelViewer.ascx.cs   6   2010-02-17 09:52:47-07:00   JasonO $
 * 
 * $Log: /trunk/Arena/UserControls/Custom/Cccev/WebUtils/PodcastChannelViewer.ascx.cs $
+*  
+*  Revision: 6   Date: 2010-02-17 16:52:47Z   User: JasonO 
+*  Fixing jquery include issues. 
+*  
+*  Revision: 5   Date: 2010-01-27 22:49:28Z   User: JasonO 
+*  Cleaning up. 
 *  
 *  Revision: 4   Date: 2009-04-16 18:48:36Z   User: JasonO 
 *  Removing un-needed dependencies. 
@@ -60,7 +66,7 @@ namespace ArenaWeb.UserControls.Custom.Cccev.WebUtils
         {
             if (!Page.IsPostBack)
             {
-                smpScripts.Scripts.Add(new ScriptReference(BasePage.JQUERY_INCLUDE));
+                smpScripts.Scripts.Add(new ScriptReference(string.Format("~/{0}", BasePage.JQUERY_INCLUDE)));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/jquery.tabSlide.js"));
                 smpScripts.Scripts.Add(new ScriptReference("~/Templates/Cccev/liger/js/main.js"));
             }
